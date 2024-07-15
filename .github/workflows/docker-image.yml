@@ -23,6 +23,6 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v4
       with:
-        context: .
+        context: ./ReceiptProcessor
         push: true
-        tags: tl11717/receiptprocessor:latest
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/receiptprocessor:latest
