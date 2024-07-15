@@ -15,7 +15,7 @@ namespace ReceiptProcessor.Controllers
         private IReceiptService _receiptService;
         private IMapper _mapper;
 
-        public ReceiptController(IReceiptService receiptService, IReceiptPointService receiptPointService, IMapper mapper)
+        public ReceiptProcessorController(IReceiptService receiptService, IReceiptPointService receiptPointService, IMapper mapper)
         {
             _receiptService = receiptService;
             _receiptPointService = receiptPointService;
