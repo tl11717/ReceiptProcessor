@@ -25,4 +25,4 @@ jobs:
       with:
         context: ./ReceiptProcessor
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/receiptprocessor:latest
+        tags: ${{ secrets.DOCKERUSERNAME }}/receiptprocessor:latest
