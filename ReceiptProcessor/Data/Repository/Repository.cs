@@ -14,17 +14,17 @@ namespace ReceiptProcessor.Data.Repository
             _dbSet = _context.Set<T>();
         }
 
-        public virtual void Add(T value)
+        public void Add(T value)
         {
             _dbSet.Add(value);
         }
 
-        public virtual T? Find(Guid id)
+        public T? Find(Guid id)
         {
             return _dbSet.Find(id);
         }
 
-        public virtual void Remove(Guid id)
+        public void Remove(Guid id)
         {
             var obj = _dbSet.Find(id);
             if (obj != null)
@@ -33,7 +33,7 @@ namespace ReceiptProcessor.Data.Repository
             }
         }
 
-        public virtual void Save()
+        public void Save()
         {
             _context.SaveChanges();
         }

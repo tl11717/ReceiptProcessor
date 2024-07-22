@@ -10,6 +10,7 @@ namespace ReceiptProcessor.Data.Context
         {
 
         }
+
         public DbSet<ReceiptPoint> ReceiptPoints { get; set; }
         public DbSet<Receipt> Receipts { get; set; }
         public DbSet<Item> Items { get; set; }

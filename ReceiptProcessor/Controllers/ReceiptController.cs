@@ -26,36 +26,32 @@ namespace ReceiptProcessor.Controllers
         [HttpGet]
         public ActionResult<List<Receipt>> GetAll()
         {
-
-                var receipts = _receiptService.GetAll();
-                return Ok(receipts);
-
+            var receipts = _receiptService.GetAll();
+            return Ok(receipts);
         }
 
         // GET Receipts/{id}
         [HttpGet("{id}")]
         public ActionResult<int> Get(Guid id)
         {
-
-                var receipt = _receiptPointService.Get(id);
-                if (receipt == null)
-                {
-                    return NotFound($"Receipt with ID {id} not found.");
-                }
-                return Ok(receipt);
-
+            var receipt = _receiptPointService.Get(id);
+            if (receipt == null)
+            {
+                return NotFound($"Receipt with ID {id} not found.");
+            }
+            return Ok(receipt);
         }
 
         // GET Receipts/{id}/points
         [HttpGet("{id}/points")]
         public ActionResult<int> GetPoints(Guid id)
         {
-                var receipt = _receiptPointService.Get(id);
-                if (receipt == null)
-                {
-                    return NotFound($"Receipt with ID {id} not found.");
-                }
-                return Ok(new { receipt.Points });
+            var receipt = _receiptPointService.Get(id);
+            if (receipt == null)
+            {
+                return NotFound($"Receipt with ID {id} not found.");
+            }
+            return Ok(new { receipt.Points });
         }
 
         // POST Receipts/process
